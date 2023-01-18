@@ -11,7 +11,8 @@
     'SCISSORS',
     'LIZARD',
     'SPOCK',
-    'FLAME'
+    'FLAME',
+    'water'
   ]
 
   const handleChoice = (choice: string) => {
@@ -30,6 +31,7 @@
       if (computerChoice == 'LIZARD') return calcScore('WIN', choice, computerChoice)
       if (computerChoice == 'SPOCK') return calcScore('LOSE', choice, computerChoice)
       if (computerChoice == 'FLAME') return calcScore('WIN', choice, computerChoice)
+      if (computerChoice == 'WATER') return calcScore('lose', choice, computerChoice)
     }
 
     if (choice == 'PAPER') {
@@ -39,6 +41,7 @@
       if (computerChoice == 'LIZARD') return calcScore('LOSE', choice, computerChoice)
       if (computerChoice == 'SPOCK') return calcScore('WIN', choice, computerChoice)
       if (computerChoice == 'FLAME') return calcScore('LOSE', choice, computerChoice)
+      if (computerChoice == 'WATER') return calcScore('WIN', choice, computerChoice)
     }
 
     if (choice == 'SCISSORS') {
@@ -48,6 +51,7 @@
       if (computerChoice == 'LIZARD') return calcScore('WIN', choice, computerChoice)
       if (computerChoice == 'SPOCK') return calcScore('LOSE', choice, computerChoice)
       if (computerChoice == 'FLAME') return calcScore('LOSE', choice, computerChoice)
+      if (computerChoice == 'WATER') return calcScore('LOSE', choice, computerChoice)
     }
 
     if (choice == 'LIZARD') {
@@ -57,6 +61,7 @@
       if (computerChoice == 'LIZARD') return calcScore('TIE', choice, computerChoice)
       if (computerChoice == 'SPOCK') return calcScore('WIN', choice, computerChoice)
       if (computerChoice == 'FLAME') return calcScore('LOSE', choice, computerChoice)
+      if (computerChoice == 'WATER') return calcScore('WIN', choice, computerChoice)
     }
 
     if (choice == 'SPOCK') {
@@ -66,6 +71,7 @@
       if (computerChoice == 'LIZARD') return calcScore('LOSE', choice, computerChoice)
       if (computerChoice == 'SPOCK') return calcScore('TIE', choice, computerChoice)
       if (computerChoice == 'FLAME') return calcScore('WIN', choice, computerChoice)
+      if (computerChoice == 'WATER') return calcScore('WIN', choice, computerChoice)
     }
 
     if (choice == 'FLAME') {
@@ -75,7 +81,19 @@
       if (computerChoice == 'LIZARD') return calcScore('WIN', choice, computerChoice)
       if (computerChoice == 'SPOCK') return calcScore('LOSE', choice, computerChoice)
       if (computerChoice == 'FLAME') return calcScore('TIE', choice, computerChoice)
+      if (computerChoice == 'WATER') return calcScore('LOSE', choice, computerChoice)
     }
+
+    if (choice == 'WATER') {
+      if (computerChoice == 'PAPER') return calcScore('WIN', choice, computerChoice)
+      if (computerChoice == 'SCISSORS') return calcScore('WIN', choice, computerChoice)
+      if (computerChoice == 'ROCK') return calcScore('WIN', choice, computerChoice)
+      if (computerChoice == 'LIZARD') return calcScore('LOSE', choice, computerChoice)
+      if (computerChoice == 'SPOCK') return calcScore('LOSE', choice, computerChoice)
+      if (computerChoice == 'FLAME') return calcScore('WIN', choice, computerChoice)
+      if (computerChoice == 'WATER') return calcScore('TIE', choice, computerChoice)
+    }
+
 
   }
 
@@ -121,6 +139,7 @@
       <button class="choice lizard" on:click={() => handleChoice('LIZARD')}>Lizard</button>
       <button class="choice spock" on:click={() => handleChoice('SPOCK')}>Spock</button>
       <button class="choice flame" on:click={() => handleChoice('FLAME')}>Flame</button>
+      <button class="choice water" on:click={() => handleChoice('WATER')}>Water</button>
 
     </div>
     <div class="scores">
@@ -160,7 +179,7 @@
   }
 
   .scissors {
-    background-color: rgb(59, 20, 167);
+    background-color: rgb(209, 216, 21);
   }
 
   .lizard {
@@ -173,5 +192,9 @@
 
   .flame {
     background-color: rgb(182, 0, 0);
+  }
+
+  .water {
+    background-color: rgb(24, 12, 184);
   }
 </style>
