@@ -111,16 +111,22 @@
 <style>
   .choice {
     display: flex;
-    gap: 30px;
+    justify-content: space-around;
     align-items:center;
     min-height: 100px;
     width: 100%;
+    max-width: 100px;
     padding: 20px;
   }
   .game-container {
     display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    max-width: 600px;
+    margin: auto;
   }
   .rock {
     background-color: #555;
