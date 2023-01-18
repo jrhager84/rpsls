@@ -2,6 +2,8 @@
   let choiceMade = false
   let wins = 0
   let losses = 0
+  let winStreak = 0
+  let loseStreak = 0
 
   const choices = [
     'ROCK',
@@ -67,11 +69,15 @@
     switch(result) {
       case 'WIN':
         wins += 1
+        winStreak += 1
+        loseStreak = 0
         alert(`Your choice: ${choice} \nComputer choice: ${computerChoice} \nResult: WIN`)
       break;
 
       case 'LOSE':
         losses += 1
+        loseStreak += 1
+        winStreak = 0
         alert(`Your choice: ${choice} \nComputer choice: ${computerChoice} \nResult: LOSE`)
       break;
 
@@ -102,8 +108,8 @@
 
     </div>
     <div class="scores">
-      <p>Wins: {wins}</p>
-      <p>Losses: {losses}</p>
+      <p>Wins: {wins} - Streak: {winStreak}</p>
+      <p>Losses: {losses} - Streak {loseStreak}</p>
     </div>
   </div>
 </main>
